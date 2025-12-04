@@ -2,6 +2,7 @@ import { Routes, Route, NavLink } from 'react-router-dom'
 import { Komment } from './pages/Komment'
 import { Poszt } from './pages/Poszt'
 import { Egykomment } from './pages/Egykomment'
+import { UjKomment } from './pages/UjKomment'
 
 import './App.css'
 
@@ -14,14 +15,15 @@ export const App = () => {
         <NavLink to="/" className="nav-link">
         <i className="bi bi-house-door-fill me-2"></i>
         Komment</NavLink>
-        <NavLink to="/post" className="nav-link">
+        <NavLink to="/comment-new" className="nav-link">
         <i className="bi bi-info-circle-fill me-2"></i>
-        Poszt</NavLink>
+        Új komment</NavLink>
       </nav>
 
       <Routes>
         <Route path="/" element={<Komment />} />
         <Route path="/post" element={<Poszt />} />
+        <Route path="/comment-new" element={<UjKomment />} />
         <Route path="/comment/:commentId" element={<Egykomment />} />
       </Routes>
     </>
